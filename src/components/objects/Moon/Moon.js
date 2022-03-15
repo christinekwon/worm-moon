@@ -42,7 +42,7 @@ class Moon extends Group {
         loader.load(MOON, obj => {
             obj.position.set(0, 0, 0);
             obj.rotation.set(0,0,0);
-			obj.scale.multiplyScalar(2.0);
+			obj.scale.multiplyScalar(3.0);
             obj.children[0].material = material;
             obj.matrixAutoUpdate = false;
             obj.updateMatrix();

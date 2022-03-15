@@ -74,7 +74,7 @@ class MainScene extends Scene {
 
         this.moon = new Moon(this, metalMap);
 
-        let bubPos = 4;
+        let bubPos = 5;
         let interBub = bubPos*Math.sin(Math.PI / 4);
         this.hearts = [
             //front right back left
@@ -139,7 +139,7 @@ class MainScene extends Scene {
 
     update(timeStamp) {
         const { rotationSpeed, updateList } = this.state;
-        this.rotation.y = (rotationSpeed * timeStamp) / 10000;
+        this.rotation.y = (rotationSpeed * timeStamp) / 1000;
 
         // Call update for each object in the updateList
         for (const obj of updateList) {

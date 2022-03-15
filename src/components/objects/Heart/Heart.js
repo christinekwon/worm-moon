@@ -95,9 +95,11 @@ class Heart extends Group {
 
 	update(timeStamp) {
 		if (this.state.startGrowing) {
+			this.sphere.rotateY(0.1);
 			if (this.state.grow) {
 				this.state.count++;
 				this.sphere.scale.addScalar(0.01);
+				
 				if (this.state.count == 50) {
 					this.state.grow = 0;
 				}
