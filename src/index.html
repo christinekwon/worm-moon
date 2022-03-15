@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title><%= htmlWebpackPlugin.options.title %></title>
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.13.0/css/all.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Roboto+Mono:wght@400;500;700&family=Trocchi&display=swap" rel="stylesheet">
+    <style>
+
+
+    /* Tooltip text */
+    .tooltiptext {
+      visibility: hidden;
+      width: 120px;
+      background-color: white;
+      color: rgb(118, 118, 118);
+      text-align: center;
+      padding: 20px;
+      border-radius: 6px;
+      left: 50px;
+      top: 0px;
+      font-size: 12px;
+      /* Position the tooltip text - see examples below! */
+      position: absolute;
+      z-index: 1;
+    }
+
+    .typed {
+            font-family: 'Roboto Mono';
+            font-size: 20px;
+            font-weight: 500;
+            align-content: center;
+            text-align: center;
+            margin: 0 auto;
+            display: inline-block;
+            opacity: 1;
+            visibility: visible;
+            color:rgb(101, 101, 101);
+            line-height: 200%;
+            width: 70%;
+            height: 50%;
+            position: absolute;
+            top: 35%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        a {
+            position: absolute;
+            top: 90%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: 'Roboto Mono';
+            font-size: 20px;
+            font-weight: 700;
+            align-content: center;
+            text-align: center;
+            background-color: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            margin: 0 auto;
+            color: white;
+            /* border: 5px solid white; */
+            color:rgb(101, 101, 101);
+            text-decoration: none;
+        }
+        a:hover {
+            background-color: rgb(255, 217, 240);
+            background-color: rgba(255, 255, 255, 0.803);
+        }
+    /* @media screen and (min-width: 1201px) {
+        .intro-container {
+            text-align: center;
+            align-content: center;
+            position: absolute;
+            margin: 0 auto;
+            width: 40vw;
+            height: 30vh;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+                
+            background-color: rgba(255, 255, 255, 0.8);
+            border: 5px solid white;
+        }
+        .typed {
+            font-family: 'Roboto Mono';
+            font-size: 20px;
+            font-weight: 500;
+            align-content: center;
+            text-align: center;
+            margin: 0 auto;
+            display: inline-block;
+            opacity: 1;
+            visibility: visible;
+            color:rgb(101, 101, 101);
+            line-height: 200%;
+            width: 70%;
+            height: 50%;
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        a {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: 'Roboto Mono';
+            font-size: 20px;
+            font-weight: 700;
+            align-content: center;
+            text-align: center;
+            background-color: white;
+            padding: 0px 20px;
+            border-radius: 50px;
+            margin: 0 auto;
+            color: white;
+            border: 5px solid white;
+            color:rgb(101, 101, 101);
+            text-decoration: none;
+        }
+        a:hover {
+            background-color: rgb(255, 217, 240);
+        }
+    }
+
+    @media screen and (max-width: 1200px) {
+        .intro-container {
+            text-align: center;
+            align-content: center;
+            position: absolute;
+            margin: 0 auto;
+            width: 70vw;
+            height: 40vh;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+                
+            background-color: rgba(255, 255, 255, 0.8);
+            border: 5px solid white;
+        }
+        .typed {
+            font-family: 'Roboto Mono';
+            font-size: 40px;
+            font-weight: 500;
+            align-content: center;
+            text-align: center;
+            margin: 0 auto;
+            display: inline-block;
+            opacity: 1;
+            visibility: visible;
+            color:rgb(101, 101, 101);
+            line-height: 200%;
+            width: 70%;
+            height: 50%;
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        a {
+            font-family: 'Roboto Mono';
+            font-size: 40px;
+            font-weight: 700;
+            align-content: center;
+            text-align: center;
+            background-color: white;
+            padding: 0px 20px;
+            border-radius: 50px;
+            color: white;
+            border: 5px solid white;
+            display: inline-block;
+            color:rgb(101, 101, 101);
+            line-height: 200%;
+            position: relative;
+            top: 60%;
+            text-decoration: none;
+        }
+        a:hover {
+            background-color: rgb(255, 217, 240);
+        }
+    } */
+
+  </style>
+
+  <body onload="start()">
+
+
+    <!-- <div class="intro-container" id="intro">
+      <p class="typed" id="typed"> </p>
+      <br>
+      <a href="sms:+16092857109" onclick="closeWindow()">
+        rsvp
+      </a>
+    </div> -->
+    <p class="typed" id="typed"> </p>
+    <a href="sms:+16092857109" onclick="closeWindow()">
+        rsvp
+      </a>
+  </body>
+  
+  <script>
+    function start() {
+      setTimeout(type, 1000);
+    }
+
+    function closeWindow() {
+      console.log("closing");
+      document.getElementById("intro").style.display = "none";
+    }
+
+    function type() {
+      messages = [
+        // "...",
+        // "...",
+        // "unfortunately, we had to cancel our party",
+        // "due to covid concerns...",
+        // "stay safe",
+        // "and we will see you at the next moon ~",
+
+
+        // "...",
+        // "...",
+        // "u r invited to the love moon party",
+        // "@ 10 bank",
+        // "thu feb 17",
+        // "@ 8 30 pm",
+        // "attire : love",
+        // "bring someone or something u love",
+        // "rsvp by clicking the butt below : (send ur name)"
+    ];
+
+    var typed = new Typed('.typed', {
+        strings: messages,
+        // 25 is good
+        typeSpeed: 100,
+        showCursor: false,
+        cursorChar: '|',
+        autoInsertCss: true,
+    });
+}
+  </script>
+</html>
