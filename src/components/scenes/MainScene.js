@@ -37,10 +37,20 @@ class MainScene extends Scene {
         this.interval = 70;
 
         const colors = [
-            [0, 4, 33],
-            [41, 0, 11],
-            [0, 26, 12],
-            [26, 11, 0],
+
+            [255, 217, 240],
+            [255, 194, 231],
+            [234, 212, 255],
+            [220, 181, 255],
+            [255, 222, 222],
+            [255, 204, 204],
+            [217, 255, 251],
+            [289, 255, 249],
+
+            // [0, 4, 33],
+            // [41, 0, 11],
+            // [0, 26, 12],
+            // [26, 11, 0],
 
             
             // 0xffd9f0,
@@ -62,8 +72,10 @@ class MainScene extends Scene {
         this.colors = colors;
 
 
+        // // Set background to a nice color
+        // this.background = new Color(0x9ecdff);
         // Set background to a nice color
-        this.background = new Color(0xffd9f0);
+        this.background = new Color(0x000000);
 
         var metalMap = new CubeTextureLoader()
         .load( [
@@ -139,40 +151,40 @@ class MainScene extends Scene {
 
     update(timeStamp) {
         const { rotationSpeed, updateList } = this.state;
-        this.rotation.y = (rotationSpeed * timeStamp) / 1000;
+        this.rotation.y = (rotationSpeed * timeStamp) / 3000;
 
         // Call update for each object in the updateList
         for (const obj of updateList) {
             obj.update(timeStamp);
         }
-        if (this.state.count == this.colors.length * this.interval) {
-            this.state.count = 0;
-            this.state.color = 0;
-        }
-        else if (this.state.count % this.interval == 0) {
-            this.state.color += 1;
-            this.state.count += 1;
-        }
-        let distance = (this.state.count % this.interval)
-        // change bg
-        if (this.state.color < this.colors.length - 1) {
-            let color = new Color(
-                this.colors[this.state.color][0] + (this.state.count % this.interval) * ((this.colors[this.state.color + 1][0] - this.colors[this.state.color][0]) / this.interval),
-                this.colors[this.state.color][1] + (this.state.count % this.interval) * ((this.colors[this.state.color + 1][1] - this.colors[this.state.color][1]) / this.interval),
-                this.colors[this.state.color][2] + (this.state.count % this.interval) * ((this.colors[this.state.color + 1][2] - this.colors[this.state.color][2]) / this.interval)
-            );
-            this.background = color;
-        }
-        else {
-            let color = new Color(
-                this.colors[this.state.color][0] + (this.state.count % this.interval) * ((this.colors[0][0] - this.colors[this.state.color][0]) / this.interval),
-                this.colors[this.state.color][1] + (this.state.count % this.interval) * ((this.colors[0][1] - this.colors[this.state.color][1]) / this.interval),
-                this.colors[this.state.color][2] + (this.state.count % this.interval) * ((this.colors[0][2] - this.colors[this.state.color][2]) / this.interval)
-            );
-            this.background = color;
-        }
+        // if (this.state.count == this.colors.length * this.interval) {
+        //     this.state.count = 0;
+        //     this.state.color = 0;
+        // }
+        // else if (this.state.count % this.interval == 0) {
+        //     this.state.color += 1;
+        //     this.state.count += 1;
+        // }
+        // let distance = (this.state.count % this.interval)
+        // // change bg
+        // if (this.state.color < this.colors.length - 1) {
+        //     let color = new Color(
+        //         this.colors[this.state.color][0] + (this.state.count % this.interval) * ((this.colors[this.state.color + 1][0] - this.colors[this.state.color][0]) / this.interval),
+        //         this.colors[this.state.color][1] + (this.state.count % this.interval) * ((this.colors[this.state.color + 1][1] - this.colors[this.state.color][1]) / this.interval),
+        //         this.colors[this.state.color][2] + (this.state.count % this.interval) * ((this.colors[this.state.color + 1][2] - this.colors[this.state.color][2]) / this.interval)
+        //     );
+        //     this.background = color;
+        // }
+        // else {
+        //     let color = new Color(
+        //         this.colors[this.state.color][0] + (this.state.count % this.interval) * ((this.colors[0][0] - this.colors[this.state.color][0]) / this.interval),
+        //         this.colors[this.state.color][1] + (this.state.count % this.interval) * ((this.colors[0][1] - this.colors[this.state.color][1]) / this.interval),
+        //         this.colors[this.state.color][2] + (this.state.count % this.interval) * ((this.colors[0][2] - this.colors[this.state.color][2]) / this.interval)
+        //     );
+        //     this.background = color;
+        // }
 
-        this.state.count++;
+        // this.state.count++;
     }
 
     
